@@ -6,11 +6,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.math.BigDecimal;
 import java.time.Instant;
 
-@Document(collation = "Prices")
+@Document("Prices")
 public class Price {
-    // {"lprice":"21385.3","curr1":"BTC","curr2":"USD"}
+
     @Id
-    private Integer id;
+    private String id;
     private BigDecimal lprice;
     private String curr1;
     private String curr2;
@@ -27,11 +27,11 @@ public class Price {
         this.timestamp = timestamp;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

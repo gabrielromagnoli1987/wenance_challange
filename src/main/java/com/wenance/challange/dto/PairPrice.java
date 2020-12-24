@@ -1,26 +1,25 @@
 package com.wenance.challange.dto;
 
-import java.math.BigDecimal;
-
-public class PriceDto {
-    private BigDecimal lprice;
+public class PairPrice {
+    // {"lprice":"21385.3","curr1":"BTC","curr2":"USD"}
+    private String lprice;
     private String curr1;
     private String curr2;
 
-    public PriceDto() {
+    public PairPrice() {
     }
 
-    public PriceDto(BigDecimal lprice, String curr1, String curr2) {
+    public PairPrice(String lprice, String curr1, String curr2) {
         this.lprice = lprice;
         this.curr1 = curr1;
         this.curr2 = curr2;
     }
 
-    public BigDecimal getLprice() {
+    public String getLprice() {
         return lprice;
     }
 
-    public void setLprice(BigDecimal lprice) {
+    public void setLprice(String lprice) {
         this.lprice = lprice;
     }
 
@@ -38,5 +37,14 @@ public class PriceDto {
 
     public void setCurr2(String curr2) {
         this.curr2 = curr2;
+    }
+
+    @Override
+    public String toString() {
+        return "PairPrice{" +
+                "lprice='" + lprice + '\'' +
+                ", curr1='" + curr1 + '\'' +
+                ", curr2='" + curr2 + '\'' +
+                '}';
     }
 }
