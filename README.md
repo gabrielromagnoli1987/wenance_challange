@@ -5,7 +5,7 @@
 1. Install [docker engine](https://docs.docker.com/engine/install)
 2. Install [docker-compose](https://docs.docker.com/compose/install/)
 3. Open a terminal and execute the following commands:\
-    3.1 `git clone https://github.com/gabrielromagnoli1987/wenance_challange.git`
+    3.1 `git clone https://github.com/gabrielromagnoli1987/wenance_challange.git` \
     3.2 `cd wenance_challange` to move to the downloaded folder \
     3.3 `docker-compose up` This command will download a docker maven image
    (this image will download the dependencies of the application and build the app),

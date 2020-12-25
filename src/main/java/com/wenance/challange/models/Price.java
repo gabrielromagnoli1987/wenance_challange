@@ -2,6 +2,8 @@ package com.wenance.challange.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.FieldType;
 
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -11,9 +13,14 @@ public class Price {
 
     @Id
     private String id;
+
+    @Field(targetType = FieldType.DECIMAL128)
     private BigDecimal lprice;
+
     private String curr1;
+
     private String curr2;
+
     private Instant timestamp;
 
     public Price() {

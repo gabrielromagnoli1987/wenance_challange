@@ -47,7 +47,6 @@ public class CustomPriceRepositoryImpl implements CustomPriceRepository {
                 Price.class,
                 AverageAndMaxPrice.class
         );
-
         return result.single();
 
     }

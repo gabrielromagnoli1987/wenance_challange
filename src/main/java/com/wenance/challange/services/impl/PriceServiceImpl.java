@@ -2,7 +2,6 @@ package com.wenance.challange.services.impl;
 
 import com.wenance.challange.dto.PairPrice;
 import com.wenance.challange.models.Price;
-import com.wenance.challange.repositories.impl.CustomPriceRepositoryImpl;
 import com.wenance.challange.repositories.PriceRepository;
 import com.wenance.challange.repositories.result.AverageAndMaxPrice;
 import com.wenance.challange.services.PriceService;
