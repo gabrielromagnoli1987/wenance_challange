@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "3a049f46-c16a-4563-a591-a2b46354b1f6",
+		"name": "wenance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://cex.io/api/last_price/BTC/USD",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cex.io/api/last_price/BTC/USD",
+					"protocol": "https",
+					"host": [
+						"cex",
+						"io"
+					],
+					"path": [
+						"api",
+						"last_price",
+						"BTC",
+						"USD"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bitcoin/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bitcoin",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPriceByTimestamp",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bitcoin?timestamp=2020-12-22T20:57:12.784Z&currency1=BTC&currency2=USD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bitcoin"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "2020-12-22T20:57:12.784Z"
+						},
+						{
+							"key": "currency1",
+							"value": "BTC"
+						},
+						{
+							"key": "currency2",
+							"value": "USD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPricesByTimestampBetween",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bitcoin/between?startTimestamp=2020-12-22T21:00:12.555Z&finishTimestamp=2020-12-22T21:00:52.766Z&currency1=BTC&currency2=USD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bitcoin",
+						"between"
+					],
+					"query": [
+						{
+							"key": "startTimestamp",
+							"value": "2020-12-22T21:00:12.555Z"
+						},
+						{
+							"key": "finishTimestamp",
+							"value": "2020-12-22T21:00:52.766Z"
+						},
+						{
+							"key": "currency1",
+							"value": "BTC"
+						},
+						{
+							"key": "currency2",
+							"value": "USD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAvgAndMaxBetweenTimestampsERROR",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bitcoin/average-and-max-between?startTimestamp=2020-12-22T21:00:12.555Z&finishTimestamp=2020-12-22T21:18:42.757Z&currency1=BTC&currency2=USD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bitcoin",
+						"average-and-max-between"
+					],
+					"query": [
+						{
+							"key": "startTimestamp",
+							"value": "2020-12-22T21:00:12.555Z"
+						},
+						{
+							"key": "finishTimestamp",
+							"value": "2020-12-22T21:18:42.757Z"
+						},
+						{
+							"key": "currency1",
+							"value": "BTC"
+						},
+						{
+							"key": "currency2",
+							"value": "USD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAvgAndMaxBetweenTimestamps",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bitcoin/average-and-max-between?startTimestamp=2020-12-22T21:00:12.555Z&finishTimestamp=2020-12-22T21:18:42.757Z&currency1=BTC&currency2=USD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bitcoin",
+						"average-and-max-between"
+					],
+					"query": [
+						{
+							"key": "startTimestamp",
+							"value": "2020-12-22T21:00:12.555Z"
+						},
+						{
+							"key": "finishTimestamp",
+							"value": "2020-12-22T21:18:42.757Z"
+						},
+						{
+							"key": "currency1",
+							"value": "BTC"
+						},
+						{
+							"key": "currency2",
+							"value": "USD"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

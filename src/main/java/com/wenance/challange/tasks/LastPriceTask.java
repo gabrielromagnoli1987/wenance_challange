@@ -3,7 +3,7 @@ package com.wenance.challange.tasks;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wenance.challange.dto.PairPrice;
-import com.wenance.challange.services.impl.PriceServiceImpl;
+import com.wenance.challange.services.PriceService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ public class LastPriceTask {
     private WebClient webClient;
 
     @Autowired
-    private PriceServiceImpl bitcoinService;
+    private PriceService priceService;
 
     @Scheduled(fixedRate = 10000)
     public void getBtcUsdPricesFromExternalAPI() {
@@ -33,7 +33,7 @@ public class LastPriceTask {
                     PairPrice pairPrice = null;
                     try {
                         pairPrice = new ObjectMapper().readValue(body, PairPrice.class);
-                        bitcoinService.savePrice(pairPrice);
+                        priceService.savePrice(pairPrice);
                     } catch (JsonProcessingException e) {
                         e.printStackTrace();
                     }

@@ -11,3 +11,8 @@
    (this image will download the dependencies of the application and build the app),
    an openjdk:11 image that will run the application.jar,
    a mongodb image for our database, and then it will run the 2 containers (the java 11 one and the mongodb one) connected on the same network.
+   
+Testing the endpoints
+
+Import the file *wenance.postman_collection.json* into Postman and make the requests from there. \
+Note: Adapt the timestamps values of the requests to get actual results. 
