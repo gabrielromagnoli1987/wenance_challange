@@ -10,7 +10,7 @@ import java.time.Instant;
 
 public interface PriceService {
 
-    void savePrice(PairPrice pairPrice);
+    Mono<Price> savePrice(PairPrice pairPrice);
 
     Flux<Price> getAll();
 

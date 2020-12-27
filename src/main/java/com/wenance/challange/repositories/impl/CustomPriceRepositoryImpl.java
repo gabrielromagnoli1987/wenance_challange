@@ -19,8 +19,17 @@ import java.time.Instant;
 @Repository
 public class CustomPriceRepositoryImpl implements CustomPriceRepository {
 
+
+    private final ReactiveMongoTemplate reactiveMongoTemplate;
+
     @Autowired
-    private ReactiveMongoTemplate reactiveMongoTemplate;
+    public CustomPriceRepositoryImpl(ReactiveMongoTemplate reactiveMongoTemplate) {
+        this.reactiveMongoTemplate = reactiveMongoTemplate;
+    }
+
+    public ReactiveMongoTemplate getReactiveMongoTemplate() {
+        return reactiveMongoTemplate;
+    }
 
     @Override
     public Mono<AverageAndMaxPrice> getAverageAndMaxPricesBetweenTimestamps(Instant startTimestamp,

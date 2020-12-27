@@ -15,11 +15,23 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class LastPriceTask {
     private static final Logger logger = LoggerFactory.getLogger(LastPriceTask.class);
 
-    @Autowired
-    private WebClient webClient;
+    private final WebClient webClient;
+
+    private final PriceService priceService;
 
     @Autowired
-    private PriceService priceService;
+    public LastPriceTask(WebClient webClient, PriceService priceService) {
+        this.webClient = webClient;
+        this.priceService = priceService;
+    }
+
+    public WebClient getWebClient() {
+        return webClient;
+    }
+
+    public PriceService getPriceService() {
+        return priceService;
+    }
 
     @Scheduled(fixedRate = 10000)
     public void getBtcUsdPricesFromExternalAPI() {

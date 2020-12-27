@@ -17,16 +17,26 @@ import java.time.Instant;
 @Service
 public class PriceServiceImpl implements PriceService {
 
+    private final PriceRepository priceRepository;
+
     @Autowired
-    private PriceRepository priceRepository;
+    public PriceServiceImpl(PriceRepository priceRepository) {
+        this.priceRepository = priceRepository;
+    }
+
+    public PriceRepository getPriceRepository() {
+        return priceRepository;
+    }
 
     @Override
-    public void savePrice(PairPrice pairPrice) {
+    public Mono<Price> savePrice(PairPrice pairPrice) {
         Price price = new Price();
         BeanUtils.copyProperties(pairPrice, price);
         price.setLprice(new BigDecimal(pairPrice.getLprice()));
         price.setTimestamp(Instant.now());
-        priceRepository.save(price).subscribe();
+        Mono<Price> priceMono = priceRepository.save(price);
+        priceMono.subscribe();
+        return priceMono;
     }
 
     @Override
